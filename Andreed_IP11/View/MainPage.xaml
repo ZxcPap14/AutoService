@@ -1,0 +1,23 @@
+﻿<Page x:Class="Andreed_IP11.View.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Andreed_IP11.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450"
+      Title="MainPage" Width="1200">
+
+    <Grid>
+        <Menu HorizontalAlignment="Center" x:Name="MainMenu" VerticalAlignment="Top">
+            <MenuItem Margin="2" Header="Учет запчастей" Click="PartsManagement_Click"/>
+            <MenuItem Margin="2" Header="Учет заказов" Click="OrdersManagement_Click"/>
+            <MenuItem Margin="2" Header="Учет ремонтов" Click="RepairsManagement_Click"/>
+            <MenuItem Margin="2" Header="Статистика" Click="Statistics_Click"/>
+            <MenuItem Margin="2" Header="Управление пользователями" Click="UserManagement_Click"/>
+            <MenuItem Margin="2" Header="Управление цехами и сотрудниками" Click="DepartmentsAndEmployees_Click"/>
+            <MenuItem Margin="2" Header="Журнал событий" Click="EventsLog_Click"/>
+        </Menu>
+        <Frame x:Name="ContentArea" Margin="38,18,38,0"/>
+    </Grid>
+</Page>

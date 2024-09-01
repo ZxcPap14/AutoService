@@ -1,0 +1,76 @@
+﻿<Page x:Class="Andreed_IP11.View.Department.DepartmentManagementPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Andreed_IP11.View.Department"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1200"
+      Title="DepartmentManagementPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2.5*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Таблица для отображения цехов -->
+
+        <DataGrid SelectionChanged="RedactButton_Click" x:Name="DepartmentsDataGrid" Grid.Column="0" Margin="10" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding DepartmentID}" Width="auto"/>
+                <DataGridTextColumn Header="Название цеха" Binding="{Binding DepartmentName}" Width="*"/>
+                <DataGridTemplateColumn Header="" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button  Background="#2ECC71" Content="Редактировать" Click="RedactButton_Click" Tag="{Binding DepartmentID}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button  Background="#2ECC71" Content="Удалить" Click="YdolButton_Click" Tag="{Binding DepartmentID}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Таблица для отображения сотрудников -->
+        <DataGrid x:Name="EmployeesDataGrid" Grid.Column="1" Margin="10" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding EmployeeID}" Width="Auto"/>
+                <DataGridTextColumn Header="Имя сотрудника" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Должность" Binding="{Binding Position}" Width="*"/>
+                <DataGridTextColumn Header="Депортмент" Binding="{Binding Department}" Width="*"/>
+
+                <DataGridTemplateColumn Header="" Width="130">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button  Background="#2ECC71" Content="Сменить депортамент" Click="DeportButton_Click" Tag="{Binding EmployeeID}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Поля ввода и кнопки для управления цехами -->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="10">
+            <TextBox x:Name="DepartmentNameTextBox" Width="200" Margin="5" />
+            <Button x:Name="AddDepartmentButton" Click="AddDepartClick" Content="Добавить" Width="90"/>
+            <Button x:Name="editDepartmentButton" Click="editDepartClick" Content="Сохранить" Width="90"/>
+            
+        </StackPanel>
+
+        <!-- Поля ввода и кнопки для управления сотрудниками -->
+        <StackPanel x:Name="prikopdvametra" Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="10">
+            <ComboBox SelectionChanged="Deportament_SelectionChanged" x:Name="zxcPap14"  DisplayMemberPath="Name" Width="150"/>
+            <Button Click="narkota" Content="Сохранить" Margin="5,0,0,0" Width="90"/>
+        </StackPanel>
+    </Grid>
+</Page>

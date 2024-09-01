@@ -1,0 +1,32 @@
+﻿<Page x:Class="Andreed_IP11.View.Zakazi.ZakaziManagementPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Andreed_IP11.View.Zakazi"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ZakaziManagementPage">
+
+    <Grid>
+        <StackPanel Margin="10">
+            <!-- Панель инструментов -->
+
+
+
+            <DataGrid SelectionChanged="gridviewUsrs1_SelectionChanged" x:Name="OrdersDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" Margin="0,10,0,0" Height="400">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding OrderID}" Width="Auto"/>
+                    <DataGridTextColumn Header="Клиент" Binding="{Binding CustomerName}" Width="*"/>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding OrderDate}" Width="*"/>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <Button Content="Добавить заказ" Click="AddOrderButton_Click" Margin="0,0,10,0"/>
+                <Button Content="Редактировать заказ" Click="EditOrderButton_Click" Margin="0,0,10,0"/>
+                <Button Content="Удалить заказ" Click="DeleteOrderButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

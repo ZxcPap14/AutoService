@@ -1,0 +1,40 @@
+﻿<Page x:Class="Andreed_IP11.View.Zapchasti.RedactPartsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Andreed_IP11.View.Zapchasti"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RedactPartsPage">
+
+    <Grid>
+        <ComboBox Background="#3498DB" x:Name="comboBoxNames" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right"  SelectionChanged="comboBoNames_SelectionChanged" IsTextSearchEnabled="True" IsEditable="True" ScrollViewer.CanContentScroll="True"/>
+        <StackPanel Margin="60">
+        <!-- Метки и поля ввода -->
+        <StackPanel Margin="50,0,50,10" >
+            <TextBlock Text="Наименование:" Margin="0,0,0,5" />
+            <TextBox x:Name="NameTextBox" />
+        </StackPanel>
+
+        <StackPanel Margin="50,0,50,10">
+            <TextBlock Text="Цена:" Margin="0,0,0,5" />
+            <TextBox x:Name="PriceTextBox" />
+        </StackPanel>
+
+        <StackPanel Margin="50,0,50,10">
+            <TextBlock Text="Количество:" Margin="0,0,0,5" />
+            <TextBox x:Name="QuantityTextBox" />
+        </StackPanel>
+
+        <StackPanel Margin="50,0,50,10">
+            <TextBlock Text="Поставщик:" Margin="0,0,0,5" />
+            <TextBox x:Name="SupplierTextBox" />
+        </StackPanel>
+
+        <!-- Кнопка сохранения -->
+        <Button Content="Сохранить" Click="SaveButton_Click" Width="120"/>
+        <Button Margin="0,10,0,0" Content="Назад" Click="GoBackButton_Click" Width="120"/>
+    </StackPanel>
+</Grid>
+</Page>

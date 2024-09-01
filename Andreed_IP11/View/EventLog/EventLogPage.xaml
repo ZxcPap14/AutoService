@@ -1,0 +1,41 @@
+﻿<Page x:Class="Andreed_IP11.View.EventLog.EventLogPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Andreed_IP11.View.EventLog"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1200"
+      Title="EventLogPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Фильтры -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <TextBlock Text="Фильтр по пользователю:" VerticalAlignment="Center" Margin="5"/>
+            <ComboBox SelectionChanged="UserFilterComboBox_SelectionChanged" x:Name="UserFilterComboBox" Width="150" Margin="5"/>
+
+            <TextBlock Text="Дата от:" VerticalAlignment="Center" Margin="5"/>
+            <DatePicker x:Name="StartDatePicker" Width="120" Margin="5"/>
+
+            <TextBlock Text="Дата до:" VerticalAlignment="Center" Margin="5"/>
+            <DatePicker x:Name="EndDatePicker" Width="120" Margin="5"/>
+
+            <Button x:Name="ApplyFilterButton" Click="ApplyFilterButton_Click" Content="Применить" Width="75" Margin="5"/>
+            <Button x:Name="ClearFilterButton" Click="ClearFilterButton_Click" Content="Очистить" Width="75" Margin="5"/>
+        </StackPanel>
+
+        <!-- Таблица с событиями -->
+        <DataGrid x:Name="EventLogDataGrid" Grid.Row="1" Margin="10" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Дата и время" Binding="{Binding EventDateTime}" Width="*"/>
+                <DataGridTextColumn Header="Пользователь" Binding="{Binding UserName}" Width="*"/>
+                <DataGridTextColumn Header="Событие" Binding="{Binding EventDescription}" Width="2*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

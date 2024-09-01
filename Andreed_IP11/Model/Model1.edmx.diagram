@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="89185d4d4b4b42879680250dfe29c068" Name="Diagram1">
+        <EntityTypeShape EntityType="ssssModel.Departments" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssssModel.Employees" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssssModel.EventsLog" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssssModel.OrderDetails" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssssModel.Orders" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssssModel.Parts" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssssModel.Repairs" Width="1.5" PointX="5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssssModel.Statisticss" Width="1.5" PointX="5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssssModel.Users" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="ssssModel.FK__Repairs__Employe__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="ssssModel.FK__Statistic__Emplo__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="ssssModel.FK__EventsLog__UserI__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="ssssModel.FK__OrderDeta__Order__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="ssssModel.FK__OrderDeta__PartI__48CFD27E" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

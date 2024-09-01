@@ -1,0 +1,54 @@
+﻿<Page x:Class="Andreed_IP11.View.Zakazi.RedactZakazPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Andreed_IP11.View.Zakazi"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RedactZakazPage">
+
+    <Grid Margin="10">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Row="0">
+            <ComboBox Background="#3498DB" x:Name="comboBoxNames" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right"  SelectionChanged="comboBoNames_SeletionChanged" IsTextSearchEnabled="True" IsEditable="True" ScrollViewer.CanContentScroll="True"/>
+
+            <TextBlock Text="Заказ" FontWeight="Bold" Margin="0,0,0,10"/>
+            <TextBlock Text="Имя клиента:"/>
+            <TextBox x:Name="CustomerNameTextBox" Width="200" Margin="0,0,0,10"  Height="20"/>
+            <TextBlock Text="Дата заказа:"/>
+            <DatePicker x:Name="OrderDatePicker" Width="200" Margin="0,0,0,10"  Height="20"/>
+            <TextBlock Text="Статус заказа:"/>
+
+            <ComboBox x:Name="QuantityTextBox" Height="20"  Width="200">
+                <ComboBoxItem Content="Передан на обработку"/>
+                <ComboBoxItem Content="Едет в пункт выдачи"/>
+                <ComboBoxItem Content="Готов к получению"/>
+                <ComboBoxItem Content="Выполнен"/>
+                <ComboBoxItem Content="Отменён"/>
+            </ComboBox>
+
+
+            <StackPanel Orientation="Vertical" Grid.Row="1"  Grid.RowSpan="1">
+                <TextBlock Text="Детали заказа" FontWeight="Bold" Margin="0,0,0,10"/>
+
+                <TextBlock Text="Название запчасти:"/>
+                <ComboBox x:Name="zxcomboBoxNames" Width="200" Height="20" Margin="0,0,0,10" SelectionChanged="ccomboBoNames_SelectionChanged" IsTextSearchEnabled="True" IsEditable="True" ScrollViewer.CanContentScroll="True"/>
+
+                <TextBlock Text="Количество:"/>
+
+                <TextBlock x:Name="maxcount" HorizontalAlignment="Center"  Text="Максимум: "/>
+                <TextBox  TextChanged="PriceTextBox_TextChanged" PreviewKeyDown="textox_PreviewKeyDown" x:Name="QuantityTextBox22" Width="200" Margin="0,0,0,10" Height="20"/>
+                <TextBlock Text="Сумма заказа $:"/>
+                <TextBox  x:Name="PriceTextBox" Width="200" Margin="0,0,0,10"  Height="20" IsReadOnly="True"/>
+                <Button Content="Сохранить" Margin="0,10,0,0" Click="AddOrderDetailButton_Click" Width="170"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
